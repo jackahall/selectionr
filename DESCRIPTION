@@ -1,0 +1,12 @@
+Package: selectionr
+Title: Forward Selection with Interactions
+Version: 1.0.0
+Authors@R: 
+    person("Jack", "Hall", , "jackhall1996@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-3016-7624"))
+Description: Forward selection for LM, GLM and Cox-PH models, including interactions. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports: dplyr, gtools, lmtest, stringr, survival
