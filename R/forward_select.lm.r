@@ -25,13 +25,13 @@ forward_select.lm <- function(formula, data, test,
 
   ### Complete cases based on control variable and sort variable
 
-  if(is.null(complete.cases)){
+  if(is.null(complete_cases)){
     if(!is.null(sort)){
       if(sort %in% full_set_sorts){
         data <- data[stats::complete.cases(data), ]
       }
     }
-  } else if(complete.cases){
+  } else if(complete_cases){
     data <- data[stats::complete.cases(data), ]
   }
 
