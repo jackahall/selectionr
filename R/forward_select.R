@@ -17,7 +17,7 @@
 
 forward_select <- function(formula, data, test, method = NULL, family = NULL,
                            sort = NULL, rev = FALSE, max_ints = 2,
-                           complete_cases = FALSE, main_fx = TRUE, ...){
+                           complete_cases = NULL, main_fx = TRUE, ...){
   if(method == "lm"){
     forward_select.lm(formula, data, test,
                       sort, rev, max_ints,

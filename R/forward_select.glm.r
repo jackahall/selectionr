@@ -17,7 +17,7 @@
 
 forward_select.glm <- function(formula, data, test, family,
                                sort = NULL, rev = FALSE, max_ints = 2,
-                               complete_cases = FALSE, main_fx = TRUE, ...){
+                               complete_cases = NULL, main_fx = TRUE, ...){
 
   ### Sorting variables
 
@@ -26,12 +26,14 @@ forward_select.glm <- function(formula, data, test, family,
 
   ### Complete cases based on control variable and sort variable
 
-  if(complete_cases){
-    data <- data[stats::complete.cases(data), ]
-  } else if(!is.null(sort)){
-    if(sort %in% full_set_sorts){
-      data <- data[stats::complete.cases(data), ]
+  if(is.null(complete.cases)){
+    if(!is.null(sort)){
+      if(sort %in% full_set_sorts){
+        data <- data[stats::complete.cases(data), ]
+      }
     }
+  } else if(complete.cases){
+    data <- data[stats::complete.cases(data), ]
   }
 
   ### model0
